@@ -8,6 +8,7 @@ let computerScore = 0;
 Player1 will choose their option by using the onclick event*/
 function play(playerChoice, Multiplayer = false) {
     const choices = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
+
     let computerChoice = choices[Math.floor(Math.random() * choices.length)]; // Pick a random choice for the computer in the array of choices
     let player2Choice = null; //variable has been declared but hasn’t been assigned a value
 
@@ -17,5 +18,26 @@ function play(playerChoice, Multiplayer = false) {
             alert("Your choice is NOT valid. Please try again.");
             player2Choice = prompt("Player 2, enter your choice (rock, paper, scissors, spock, lizard):").toLowerCase();
         }
+
+    const result = Multiplayer ? getResult(playerChoice, player2Choice) : getResult(playerChoice, computerChoice);
     }
 }
+
+function getResult(playerChoice, opponentChoice) { // opponentChoice is a parameter that will receive either the computer's choice or Player 2's choice based on how play calls getResult.
+    if (playerChoice === opponentChoice) {
+        return "It's a tie!!";
+
+    } else if (
+        (playerChoice === 'rock' && (opponentChoice === 'scissors' || opponentChoice === 'lizard')) ||
+        (playerChoice === 'paper' && (opponentChoice === 'rock' || opponentChoice === 'spock')) ||
+        (playerChoice === 'scissors' && (opponentChoice === 'paper' || opponentChoice === 'lizard')) ||
+        (playerChoice === 'spock' && (opponentChoice === 'rock' || opponentChoice === 'scissors')) ||
+        (playerChoice === 'lizard' && (opponentChoice === 'paper' || opponentChoice === 'spock'))
+    ) {
+        return "Player 1 wins!";
+    } else {
+        return "Player 2 wins!";
+    } 
+}
+
+

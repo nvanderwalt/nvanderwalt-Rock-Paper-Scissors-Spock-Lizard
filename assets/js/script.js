@@ -1,5 +1,3 @@
-console.log("Hi There!")
-
 let player1Score = 0;
 let player2Score = 0;
 let computerScore = 0;
@@ -14,12 +12,12 @@ function play(playerChoice, Multiplayer = false) {
 
     if (Multiplayer) {
         player2Choice = prompt("Player 2, enter your choice (rock, paper, scissors, spock, lizard):").toLowerCase(); //Player2 will play with keyboard through prompt input
-        while (!choices.includes(player2Choice)) {   //While loop continue until player2 have a valid choice
+        while (!choices.includes(player2Choice)) { //While loop continue until player2 have a valid choice
             alert("Your choice is NOT valid. Please try again.");
             player2Choice = prompt("Player 2, enter your choice (rock, paper, scissors, spock, lizard):").toLowerCase();
         }
 
-    const result = Multiplayer ? getResult(playerChoice, player2Choice) : getResult(playerChoice, computerChoice);
+        const result = Multiplayer ? getResult(playerChoice, player2Choice) : getResult(playerChoice, computerChoice);
     }
 }
 
@@ -37,7 +35,13 @@ function getResult(playerChoice, opponentChoice) { // opponentChoice is a parame
         return "Player 1 wins!";
     } else {
         return "Player 2 wins!";
-    } 
+    }
 }
 
-
+function displayResult(result, playerChoice, opponentChoice, Multiplayer) { //4 parameters where Multiplayer is a boolean value
+    const resultDiv = document.getElementById('result'); //fetches the HTML element with the ID result. Game results will be displayed here.
+    resultDiv.innerHTML = `
+          <p>Player 1 chose ${playerChoice}.</p>
+          <p>${Multiplayer ? "Player 2" : "Computer"} chose ${opponentChoice}.</p>
+          <p>${result}</p> ' ;
+}

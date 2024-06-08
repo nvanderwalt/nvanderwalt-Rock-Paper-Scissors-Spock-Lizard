@@ -18,6 +18,7 @@ function play(playerChoice, Multiplayer = false) {
         }
 
         const result = Multiplayer ? getResult(playerChoice, player2Choice) : getResult(playerChoice, computerChoice);
+        displayResult(result, playerChoice, Multiplayer ? player2Choice : computerChoice, Multiplayer);
     }
 }
 

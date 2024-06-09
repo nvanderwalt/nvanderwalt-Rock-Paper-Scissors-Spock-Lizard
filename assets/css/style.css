@@ -5,13 +5,13 @@ body {
     align-items: center;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #1eff00;
     height: 100vh;
 }
 
 .heading {
     font-family: 'Righteous', cursive;
-    font-size: 2.5em;
+    font-size: 4em;
     margin-top: 20px;
     text-align: center;
 }
@@ -25,6 +25,16 @@ body {
     margin-top: 20px;
     flex-grow: 1;
     justify-content: center;
+    background-color: rgb(226, 253, 213);
+    border-radius: 2em;
+    padding:20px;
+}
+
+#game-type {
+    font-family: 'Raleway', cursive;
+    font-size: 3em;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .options-area {
@@ -39,6 +49,33 @@ body {
     width: 100%;
     text-align: center;
     margin-bottom: 10px;
+}
+
+.single-player,
+.multiplayer {
+    display: flex;
+    justify-content: space-around; /* Space out buttons evenly */
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.result {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #00eeff;
+    width: 50%;
+    margin-top: 20px;
 }
 
 .single-player,
@@ -72,45 +109,4 @@ body {
     .multiplayer button {
         flex: 1 1 calc(50% - 10px);
     }
-}
-
-.result {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.scores {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #fff;
-    width: 50%;
-    margin: 20px 0;
-}
-
-@media screen and (max-width: 768px) {
-    .scores {
-        width: 70%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .scores {
-        width: 90%;
-    }
-}
-
-button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-}
-
-.reset-button {
-    margin-top: 20px;
 }

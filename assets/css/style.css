@@ -10,10 +10,10 @@ body {
 }
 
 .heading {
-    text-align: center;
+    font-family: 'Righteous', cursive;
+    font-size: 4em;
     margin-top: 20px;
-    color: #333;
-    font-size: 5em;
+    text-align: center;
 }
 
 .game-area {

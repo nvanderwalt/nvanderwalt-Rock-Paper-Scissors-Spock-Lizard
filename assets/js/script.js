@@ -71,3 +71,15 @@ function displayResult(result, playerChoice, opponentChoice, Multiplayer) { // 4
     <p>${Multiplayer ? "Player 2 Score: " + player2Score : "Computer Score: " + computerScore}</p>
     `;
 }
+
+function resetScores() {
+    player1Score = 0;
+    player2Score = 0;
+    computerScore = 0;
+    const scoresDiv = document.getElementById('scores');
+    scoresDiv.innerHTML = `
+        <p>Player 1 Score: ${player1Score}</p>
+        <p>Player 2 Score: ${player2Score}</p>
+        <p>Computer Score: ${computerScore}</p>
+    `;
+}

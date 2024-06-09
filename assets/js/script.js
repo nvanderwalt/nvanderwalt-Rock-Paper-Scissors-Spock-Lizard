@@ -1,3 +1,5 @@
+console.log("Connected");
+
 let player1Score = 0;
 let player2Score = 0;
 let computerScore = 0;
@@ -18,20 +20,19 @@ function play(playerChoice, Multiplayer = false) {
             player2Choice = prompt("Player 2, enter your choice (rock, paper, scissors, spock, lizard):").toLowerCase();
         }
 
-        const result = getResult(playerChoice, player2Choice);
+        const result = getResult(playerChoice, player2Choice, Multiplayer);
         updateScore(result, Multiplayer);
         displayResult(result, playerChoice, player2Choice, Multiplayer);
     } else {
-        const result = getResult(playerChoice, computerChoice);
+        const result = getResult(playerChoice, computerChoice, Multiplayer);
         updateScore(result, Multiplayer);
         displayResult(result, playerChoice, computerChoice, Multiplayer);
     }
 }
 
-function getResult(playerChoice, opponentChoice) { // opponentChoice is a parameter that will receive either the computer's choice or Player 2's choice based on how play calls getResult.
+function getResult(playerChoice, opponentChoice, Multiplayer) { // opponentChoice is a parameter that will receive either the computer's choice or Player 2's choice based on how play calls getResult.
     if (playerChoice === opponentChoice) {
         return "It's a tie!!";
-
     } else if (
         (playerChoice === 'rock' && (opponentChoice === 'scissors' || opponentChoice === 'lizard')) ||
         (playerChoice === 'paper' && (opponentChoice === 'rock' || opponentChoice === 'spock')) ||
@@ -42,6 +43,16 @@ function getResult(playerChoice, opponentChoice) { // opponentChoice is a parame
         return "Player 1 wins!";
     } else {
         return Multiplayer ? "Player 2 wins!" : "Computer wins!";
+    }
+}
+
+function updateScore(result, Multiplayer) {
+    if (result === "Player 1 wins!") {
+        player1Score++;
+    } else if (result === "Player 2 wins!") {
+        player2Score++;
+    } else if (result === "Computer wins!") {
+        computerScore++;
     }
 }
 
@@ -57,16 +68,6 @@ function displayResult(result, playerChoice, opponentChoice, Multiplayer) { // 4
 
     scoresDiv.innerHTML = `
     <p>Player 1 Score: ${player1Score}</p>
-    <p>${Multiplayer ? "Player 2 Score" : "Computer Score"}: ${Multiplayer ? player2Score : computerScore}</p>
-`;
-}
-
-function updateScore(result, Multiplayer) {
-    if (result === "Player 1 wins!") {
-        player1Score++;
-    } else if (result === "Player 2 wins!") {
-        player2Score++;
-    } else if (result === "Computer wins!") {
-        computerScore++;
-    }
+    <p>${Multiplayer ? "Player 2 Score: " + player2Score : "Computer Score: " + computerScore}</p>
+    `;
 }

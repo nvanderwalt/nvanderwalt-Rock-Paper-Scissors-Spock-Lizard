@@ -60,6 +60,17 @@ body {
     margin-bottom: 10px;
 }
 
+.single-player button,
+.multiplayer button {
+    margin: 5px;
+    flex: 1 1 calc(20% - 10px);
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    max-width: 150px;
+    box-sizing: border-box; /* Ensure padding and border are included in element's width */
+}
+
 .result {
     text-align: center;
     margin-top: 20px;

@@ -1,5 +1,3 @@
-console.log("Connected")
-
 let player1Score = 0;
 let player2Score = 0;
 let computerScore = 0;

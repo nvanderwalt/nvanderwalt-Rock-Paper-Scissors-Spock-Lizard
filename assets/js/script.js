@@ -41,12 +41,11 @@ function getResult(playerChoice, opponentChoice) { // opponentChoice is a parame
     ) {
         return "Player 1 wins!";
     } else {
-        return "Player 2 wins!";
+        return Multiplayer ? "Player 2 wins!" : "Computer wins!";
     }
 }
 
 function displayResult(result, playerChoice, opponentChoice, Multiplayer) { // 4 parameters where Multiplayer is a boolean value
-
     const resultDiv = document.getElementById('result'); // fetches the HTML element with the ID result. Game results will be displayed here.
     const scoresDiv = document.getElementById('scores'); // fetches the HTML element with the ID score. Scores will be displayed here.
 

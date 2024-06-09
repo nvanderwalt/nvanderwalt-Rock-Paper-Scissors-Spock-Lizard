@@ -1,3 +1,5 @@
+console.log("Connected")
+
 let player1Score = 0;
 let player2Score = 0;
 let computerScore = 0;
@@ -19,9 +21,11 @@ function play(playerChoice, Multiplayer = false) {
         }
 
         const result = getResult(playerChoice, player2Choice);
+        updateScore(result, Multiplayer);
         displayResult(result, playerChoice, player2Choice, Multiplayer);
     } else {
         const result = getResult(playerChoice, computerChoice);
+        updateScore(result, Multiplayer);
         displayResult(result, playerChoice, computerChoice, Multiplayer);
     }
 }
@@ -44,9 +48,28 @@ function getResult(playerChoice, opponentChoice) { // opponentChoice is a parame
 }
 
 function displayResult(result, playerChoice, opponentChoice, Multiplayer) { // 4 parameters where Multiplayer is a boolean value
+
     const resultDiv = document.getElementById('result'); // fetches the HTML element with the ID result. Game results will be displayed here.
+    const scoresDiv = document.getElementById('scores'); // fetches the HTML element with the ID score. Scores will be displayed here.
+
     resultDiv.innerHTML = `
         <p>Player 1 chose ${playerChoice}.</p>
         <p>${Multiplayer ? "Player 2" : "Computer"} chose ${opponentChoice}.</p>
         <p>${result}</p>
     `; // Corrected closing of template string
+
+    scoresDiv.innerHTML = `
+    <p>Player 1 Score: ${player1Score}</p>
+    <p>${Multiplayer ? "Player 2 Score" : "Computer Score"}: ${Multiplayer ? player2Score : computerScore}</p>
+`;
+}
+
+function updateScore(result, Multiplayer) {
+    if (result === "Player 1 wins!") {
+        player1Score++;
+    } else if (result === "Player 2 wins!") {
+        player2Score++;
+    } else if (result === "Computer wins!") {
+        computerScore++;
+    }
+}

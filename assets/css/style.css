@@ -37,6 +37,13 @@ body {
     text-align: center;
 }
 
+#game-type2 {
+    font-family: 'Raleway', cursive;
+    font-size: 3em;
+    margin-top: 20px;
+    text-align: center;
+}
+
 .options-area {
     display: flex;
     flex-direction: column;

@@ -27,7 +27,7 @@ body {
     justify-content: center;
     background-color: rgb(226, 253, 213);
     border-radius: 2em;
-    padding:20px;
+    padding: 20px;
 }
 
 .options-area {
@@ -78,7 +78,8 @@ body {
     padding: 10px;
     font-size: 1em;
     cursor: pointer;
-    max-width: 150px; /* Control button width */
+    max-width: 150px;
+    /* Control button width */
 }
 
 #game-type {
@@ -95,17 +96,21 @@ body {
     text-align: center;
 }
 
-#reset-button {
-    margin-top: 30px;
+.reset-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
     .single-player button,
     .multiplayer button {
         flex: 1 1 calc(33.33% - 10px);
+    }
 
-        .scores {
-            width: 70%;
+    .scores {
+        width: 70%;
     }
 }
 
@@ -113,8 +118,9 @@ body {
     .single-player button,
     .multiplayer button {
         flex: 1 1 calc(50% - 10px);
+    }
 
-        .scores {
-            width: 90%;
+    .scores {
+        width: 90%;
     }
 }

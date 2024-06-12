@@ -30,20 +30,6 @@ body {
     padding:20px;
 }
 
-#game-type {
-    font-family: 'Raleway', cursive;
-    font-size: 3em;
-    margin-top: 20px;
-    text-align: center;
-}
-
-#game-type2 {
-    font-family: 'Raleway', cursive;
-    font-size: 3em;
-    margin-top: 20px;
-    text-align: center;
-}
-
 .options-area {
     display: flex;
     flex-direction: column;
@@ -58,26 +44,6 @@ body {
     margin-bottom: 10px;
 }
 
-.single-player,
-.multiplayer {
-    display: flex;
-    justify-content: space-around; /* Space out buttons evenly */
-    flex-wrap: wrap;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.single-player button,
-.multiplayer button {
-    margin: 5px;
-    flex: 1 1 calc(20% - 10px);
-    padding: 10px;
-    font-size: 1em;
-    cursor: pointer;
-    max-width: 150px;
-    box-sizing: border-box; /* Ensure padding and border are included in element's width */
-}
-
 .result {
     text-align: center;
     margin-top: 20px;
@@ -88,7 +54,7 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #ccc;
+    border: 4px solid #9e9d9d;
     border-radius: 10px;
     padding: 20px;
     background-color: #00eeff;
@@ -113,6 +79,24 @@ body {
     font-size: 1em;
     cursor: pointer;
     max-width: 150px; /* Control button width */
+}
+
+#game-type {
+    font-family: 'Raleway', cursive;
+    font-size: 3em;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#game-type2 {
+    font-family: 'Raleway', cursive;
+    font-size: 3em;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#reset-button {
+    margin-top: 30px;
 }
 
 @media screen and (max-width: 768px) {

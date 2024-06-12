@@ -112,6 +112,9 @@ body {
     .single-player button,
     .multiplayer button {
         flex: 1 1 calc(33.33% - 10px);
+
+        .scores {
+            width: 70%;
     }
 }
 
@@ -119,5 +122,8 @@ body {
     .single-player button,
     .multiplayer button {
         flex: 1 1 calc(50% - 10px);
+
+        .scores {
+            width: 90%;
     }
 }
